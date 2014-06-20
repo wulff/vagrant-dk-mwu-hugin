@@ -1,4 +1,4 @@
-Vagrant::Config.run do |config|
+Vagrant::configure('2') do |config|
   # the base box this environment is built off of
   config.vm.box = 'trusty32'
 
@@ -11,7 +11,7 @@ Vagrant::Config.run do |config|
 
   # configure memory limit and node name
   config.vm.provider 'virtualbox' do |v|
-    v.name = 'Vagrant: Hugin'
+    v.name = 'Vagrant: Gere'
     v.customize ['modifyvm', :id, '--memory', 1024]
   end
 
