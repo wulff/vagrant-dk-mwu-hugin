@@ -10,11 +10,11 @@
 # Allows all outbound traffic
 -A OUTPUT -j ACCEPT
 
-# Allows HTTP connections from anywhere
--A INPUT -p tcp --dport 80 -j ACCEPT
-
 # Allows SSH connections from anywhere
 -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+
+# Allows HTTP connections from anywhere
+-A INPUT -p tcp -m state --state NEW --dport 80 -j ACCEPT
 
 # Allows Munin connections from the master node
 -A INPUT -p tcp --src 178.79.182.116 --dport 4949 -j ACCEPT
