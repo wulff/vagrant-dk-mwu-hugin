@@ -61,6 +61,10 @@ class hugin::install {
   package { 'vim':
     ensure => present,
   }
+  exec { 'set-default-editor':
+    command => 'update-alternatives --set editor /usr/bin/vim.basic',
+    require => Package['vim'],
+  }
 
   class { 'jekyll': }
 
