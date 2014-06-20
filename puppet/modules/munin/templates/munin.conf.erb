@@ -55,10 +55,10 @@ includedir /etc/munin/munin-conf.d
 # For those with Nagios, the following might come in handy. In addition,
 # the services must be defined in the Nagios server as well.
 #contact.nagios.command /usr/bin/send_nsca nagios.host.comm -c /etc/nsca.conf
-contact.<%= user %>.command mail -s "Munin notification" <%= mail %>
+contact.<%= @user %>.command mail -s "Munin notification" <%= @mail %>
 
 # a simple host tree
-<% hosts.each do |host, ip| -%>
+<% @hosts.each do |host, ip| -%>
 [<%= host %>]
     address <%= ip %>
     use_node_name yes
