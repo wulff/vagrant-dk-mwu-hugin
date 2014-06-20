@@ -41,6 +41,10 @@ class hugin::requirements {
   class { 'ssh':
     allowusers => $ssh_allowusers,
   }
+
+  package { 'build-essential':
+    ensure => present,
+  }
 }
 
 class hugin::install {

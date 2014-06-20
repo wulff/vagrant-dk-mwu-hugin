@@ -29,6 +29,6 @@ class jekyll($version = present) {
   exec { 'gem-install-jekyll':
     command => 'gem install --no-rdoc --no-ri jekyll',
     creates => '/var/lib/gems/1.8/gems/jekyll-0.12.1/bin/jekyll',
-    require => Package['ruby-full'];
+    require => [Package['build-essential'], Package['ruby-full']];
   }
 }
