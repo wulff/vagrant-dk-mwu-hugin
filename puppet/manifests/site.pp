@@ -26,6 +26,8 @@ class hugin::requirements {
     managehome => true,
     comment => $user_comment,
     shell => '/bin/bash',
+    groups => ['sudo'],
+    password => $user_password,
   }
 
   ssh_authorized_key { $user_name:
@@ -34,10 +36,6 @@ class hugin::requirements {
     type => 'ssh-rsa',
     key => $user_authorized_key,
     require => User[$user_name],
-  }
-
-  class { 'sudo':
-    username => $user_name,
   }
 
   class { 'ssh':
@@ -90,8 +88,10 @@ class hugin::install {
 
   nginx::placeholder { 'ameliaberkeley.dk': }
   nginx::placeholder { 'egern.at': }
+  nginx::placeholder { 'georgebuckley.dk': }
+  nginx::placeholder { 'gracebuckley.dk': }
   nginx::placeholder { 'l10n.dk': }
-  nginx::placeholder { 'laerdrupal.dk': } # lærdrupal.dk
+  nginx::placeholder { 'laerdrupal.dk': }
   nginx::placeholder { 'mortenwulff.dk': }
   nginx::placeholder { 'mwu.dk': }
   nginx::placeholder { 'ratatosk.dk': }
