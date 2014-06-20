@@ -1,0 +1,13 @@
+server {
+  server_name www.<%= hostname %>;
+  return 301 $scheme://<%= hostname %>$request_uri;
+}
+
+server {
+  server_name <%= hostname %> <%= hostname %>.33.33.33.10.xip.io;
+
+  root /var/www/<%= hostname %>/docroot;
+
+  access_log  off;
+  error_log   off;
+}
