@@ -49,6 +49,13 @@ class hugin::install {
 
   class { 'iptables': }
 
+  # configure postfix as a null client
+  # http://www.postfix.org/STANDARD_CONFIGURATION_README.html#null_client
+
+  class { 'postfix':
+    hostname => 'hugin.mwu.dk',
+  }
+
   # editors and site building tools
 
   package { 'vim':
@@ -63,7 +70,7 @@ class hugin::install {
     user => $user_name,
     mail => $user_mail,
     hosts => [
-      ['gere.mwu.dk', '50.56.213.191'],
+      ['gere.mwu.dk', '192.168.187.17'],
       ['hugin.mwu.dk', '10.178.69.49'],
     ],
   }
