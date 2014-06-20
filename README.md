@@ -6,7 +6,6 @@ Makes it possible to set up a local copy of hugin.mwu.dk.
     apt-get update
     apt-get install puppet
     puppet apply --modulepath=puppet/modules/ puppet/manifests/site.pp
-    dpkg-reconfigure postfix
 
 The current version of the manifest installs the following useful applications:
 
