@@ -148,6 +148,16 @@ class hugin::install {
   class { 'timezone':
     name => 'Europe/Copenhagen',
   }
+
+  # various dot-files
+
+  file { '/etc/profile.d/aliases.sh':
+    content => 'alias update="sudo apt-get update"
+alias upgrade="sudo apt-get upgrade"
+alias puppet-apply="sudo puppet apply --modulepath=/home/wulff/vagrant/puppet/modules/ /home/wulff/vagrant/puppet/manifests/site.pp"',
+    source  => 'puppet:///modules/dotfiles/aliases.sh',
+    mode => 0644,
+  }
 }
 
 class hugin::go {
