@@ -85,6 +85,7 @@ class hugin::install {
 
   class { 'munin::node':
     host => '192.168.157.235',
+    allow => '^192\.168\.157\.235$',
   }
 
   class { 'apticron':
