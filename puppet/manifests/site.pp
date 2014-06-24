@@ -78,6 +78,7 @@ class hugin::install {
     user => $user_name,
     mail => $user_mail,
     hosts => [
+      ['freke.mwu.dk', '192.168.135.20'],
       ['gere.mwu.dk', '192.168.187.17'],
       ['hugin.mwu.dk', '192.168.157.235'],
     ],
