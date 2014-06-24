@@ -79,7 +79,7 @@ class hugin::install {
     mail => $user_mail,
     hosts => [
       ['gere.mwu.dk', '192.168.187.17'],
-      ['hugin.mwu.dk', '10.178.69.49'],
+      ['hugin.mwu.dk', '192.168.157.235'],
     ],
   }
 
