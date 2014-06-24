@@ -161,7 +161,7 @@ alias puppet-apply="sudo puppet apply --modulepath=/home/wulff/vagrant/puppet/mo
   }
 
   file { '/etc/hostname':
-    content => 'gere.mwu.dk',
+    content => 'hugin.mwu.dk',
     mode => 0644,
   }
   exec { 'update-hostname':
