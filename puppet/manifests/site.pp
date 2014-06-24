@@ -101,6 +101,8 @@ class hugin::install {
   nginx::jekyll { 'psyke.org': }
   nginx::jekyll { 'ratatosk.net': }
 
+  nginx::munin { 'status.mwu.dk': }
+
   nginx::placeholder { 'ameliaberkeley.dk': }
   nginx::placeholder { 'egern.at': }
   nginx::placeholder { 'georgebuckley.dk': }
